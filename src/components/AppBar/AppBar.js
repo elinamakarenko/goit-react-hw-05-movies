@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
 import s from './AppBar.module.css';
 export default function AppBar() {
@@ -21,7 +22,10 @@ export default function AppBar() {
           Movies
         </NavLink>
       </nav>
-      <Outlet />
+      <Suspense fallback={null}>
+        {' '}
+        <Outlet />
+      </Suspense>
     </>
   );
 }

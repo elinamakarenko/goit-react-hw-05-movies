@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import s from './AddInfoBar.module.css';
-export default function AddInfoBar() {
+export default function AddInfoBar({ state }) {
   return (
     <>
       {' '}

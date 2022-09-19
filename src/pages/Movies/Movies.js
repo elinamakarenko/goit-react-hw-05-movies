@@ -3,7 +3,6 @@ import { useSearchParams, useLocation } from 'react-router-dom';
 import fetchSearchMovie from 'services/fetchSearchMovie';
 import SearchBar from 'components/SearchBar';
 import MovieList from 'components/MovieList';
-// import s from './Movies.module.css';
 
 export default function Movies() {
   const location = useLocation();
@@ -13,7 +12,6 @@ export default function Movies() {
 
   useEffect(() => {
     if (query === '') {
-      console.log(query);
       return;
     }
     fetchSearchMovie('search/movie', query)

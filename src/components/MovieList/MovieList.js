@@ -1,4 +1,5 @@
 import { NavLink } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import s from './MovieList.module.css';
 export default function MovieList({ path, movies, state }) {
   return (
@@ -13,3 +14,8 @@ export default function MovieList({ path, movies, state }) {
     </ul>
   );
 }
+MovieList.propTypes = {
+  path: PropTypes.string,
+  movies: PropTypes.array,
+  state: PropTypes.object,
+};
