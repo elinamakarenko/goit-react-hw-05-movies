@@ -1,0 +1,16 @@
+main {
+  padding: 20px;
+}
+.button {
+  margin-bottom: 20px;
+}
+.img {
+  margin-right: 20px;
+}
+.movieDetails {
+  display: flex;
+}
+.linkButton {
+  text-decoration: none;
+  color: black;
+}

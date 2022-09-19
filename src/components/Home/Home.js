@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react';
-import { NavLink } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
+import MovieList from 'components/MovieList';
 import fetchTheMoviedb from 'services/fetchTheMoviedb';
-import AppBar from '../AppBar';
 
 const Home = () => {
+  const location = useLocation();
   const [movies, setMovies] = useState([]);
   useEffect(() => {
     fetchTheMoviedb('trending/movie/day')
@@ -19,16 +20,7 @@ const Home = () => {
   }, []);
 
   return (
-    <>
-      <AppBar />
-      <ul>
-        {movies.map(({ id, title }) => (
-          <li key={id}>
-            <NavLink to={`${id}`}>{title}</NavLink>
-          </li>
-        ))}
-      </ul>
-    </>
+    <MovieList path="movies/" movies={movies} state={{ from: location }} />
   );
 };
 export default Home;

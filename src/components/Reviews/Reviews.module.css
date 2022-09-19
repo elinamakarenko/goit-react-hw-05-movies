@@ -1,0 +1,11 @@
+ul {
+  margin: 0;
+  padding: 0;
+}
+.reviews {
+  padding: 20px;
+}
+.list {
+  list-style: none;
+  margin-bottom: 20px;
+}

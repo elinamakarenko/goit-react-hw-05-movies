@@ -1,27 +1,29 @@
-import { NavLink, Outlet } from 'react-router-dom';
-import s from './AppBar.module.css';
-export default function AppBar() {
+import { NavLink } from 'react-router-dom';
+import s from './AddInfoBar.module.css';
+export default function AddInfoBar() {
   return (
     <>
-      <nav className={s.appBar}>
+      {' '}
+      <nav className={s.addInfoBar}>
         <NavLink
+          key={'cast'}
           className={({ isActive }) =>
             !isActive ? `${s.navLink}` : `${s.activeNavLink}`
           }
-          to="/"
+          to="cast"
         >
-          Home
+          Cast
         </NavLink>
         <NavLink
+          key={'reviews'}
           className={({ isActive }) =>
             !isActive ? `${s.navLink}` : `${s.activeNavLink}`
           }
-          to="/movies"
+          to="reviews"
         >
-          Movies
+          Reviews
         </NavLink>
       </nav>
-      <Outlet />
     </>
   );
 }
