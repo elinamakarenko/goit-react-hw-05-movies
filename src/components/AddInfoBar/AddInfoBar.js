@@ -1,12 +1,14 @@
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import s from './AddInfoBar.module.css';
-export default function AddInfoBar({ state }) {
+export default function AddInfoBar() {
+  const location = useLocation();
   return (
     <>
       {' '}
       <nav className={s.addInfoBar}>
         <NavLink
           key={'cast'}
+          state={{ from: location?.state?.from }}
           className={({ isActive }) =>
             !isActive ? `${s.navLink}` : `${s.activeNavLink}`
           }
@@ -16,6 +18,7 @@ export default function AddInfoBar({ state }) {
         </NavLink>
         <NavLink
           key={'reviews'}
+          state={{ from: location?.state?.from }}
           className={({ isActive }) =>
             !isActive ? `${s.navLink}` : `${s.activeNavLink}`
           }
